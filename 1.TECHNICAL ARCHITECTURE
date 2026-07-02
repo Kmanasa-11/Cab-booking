@@ -1,1 +1,65 @@
+# Technical Architecture – Cab Booking System
 
+## Technology Stack
+- Frontend: React.js
+- Backend: Node.js
+- Framework: Express.js
+- Database: MongoDB
+- ODM: Mongoose
+- Version Control: Git & GitHub
+
+## Architecture Layers
+
+### 1. Client Layer (React.js)
+The client layer is the frontend of the application where users interact with the system.
+
+Features:
+- Cab Selection
+- Booking Form
+- Ride Tracking
+- Login / Signup
+
+### 2. API Layer (Express.js)
+The API layer acts as a bridge between the frontend and backend.
+
+REST APIs:
+- POST /api/rides/book – Book a ride
+- GET /api/users/:id – Get user details
+- PUT /api/rides/:id – Update ride status
+- DELETE /api/rides/:id – Cancel a ride
+
+### 3. Service Layer
+The service layer contains the business logic.
+
+Responsibilities:
+- Fare calculation
+- Ride matching
+- Ride tracking
+- Ride status management
+
+### 4. Data Access Layer (Mongoose)
+The data access layer communicates with MongoDB.
+
+Responsibilities:
+- Create, Read, Update and Delete (CRUD) operations
+- Define database schemas and models
+- Connect the application to MongoDB
+
+## Database Collections
+- Users
+- Drivers
+- Rides
+- Transactions
+
+## Data Flow
+
+1. User logs in.
+2. User selects pickup and destination.
+3. Booking request is sent to the Express API.
+4. Service layer calculates the fare and assigns a driver.
+5. Ride information is stored in MongoDB.
+6. Driver and user receive real-time ride updates.
+
+## Conclusion
+
+The Cab Booking application follows the MERN stack architecture with separate frontend, backend, service, and database layers. This architecture makes the application scalable, maintainable, and easy to develop.
